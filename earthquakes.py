@@ -38,4 +38,26 @@ import json
 infile = open('eq_data.json', 'r')
 earthquakes = json.load(infile)
 
-print(len(earthquakes))
+print(len(earthquakes["features"]))
+# not sure if it's print(len(earthquakes["type"])) because that shows 17 not 6274 
+
+eq_dict ={}
+#location = earthquakes["type"]["properties"]["place"]
+#mag = earthquakes["type"]["properties"]["mag"]
+#longitude = earthquakes["type"]["geometry"]["coordinates"[0]]
+#latitude = earthquakes["type"]["geometry"]["coordinates"[1]]
+for one_earthquake in earthquakes:
+   location = earthquakes[one_earthquake]["type"]["properties"]["place"]
+   mag = earthquakes[one_earthquake]["type"]["properties"]["mag"]
+   longitude = earthquakes[one_earthquake]["type"]["geometry"]["coordinates"[0]]
+   latitude = earthquakes[one_earthquake]["type"]["geometry"]["coordinates"[1]]
+   if mag > 6: 
+      eq_dict[one_earthquake] = location + mag + longitude + latitude 
+      print (eq_dict)
+      print()
+      print()
+
+
+
+   
+
