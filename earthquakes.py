@@ -46,6 +46,7 @@ eq_dict ={}
 #mag = earthquakes["type"]["properties"]["mag"]
 #longitude = earthquakes["type"]["geometry"]["coordinates"[0]]
 #latitude = earthquakes["type"]["geometry"]["coordinates"[1]]
+# indexing each description through the file to get each data point we need 
 for one_earthquake in earthquakes["features"]:
    location = one_earthquake["properties"]["place"] # why do i keep getting integer errors 
    mag = one_earthquake["properties"]["mag"]
@@ -56,12 +57,12 @@ for one_earthquake in earthquakes["features"]:
 print (eq_dict)
 print()
 print()
+# if the magnitude is greater than 6 add it to a new dictionary and print it 
 
-
-
+#print each description from the new dictionary of earthquakes that have a greater magnitude than 6
 for key, value in eq_dict.items(): #iterates through individual key values to return the list / items
    print(f'Location: {key}')
-   print('Magnitude', eq_dict[key]['magnitude'])
+   print('Magnitude', eq_dict[key]['magnitude']) 
    print('Longitude', eq_dict[key]['longitude'])
    print('Latitude', eq_dict[key]['latitude'])
    print()
