@@ -37,18 +37,23 @@ for name_school in schools:
         print(name)
         print(conference)
 """""
-
+print('Report for Graduation rate for women above 80%')
 for name_school in schools:
     if name_school["NCAA"]["NAIA conference number football (IC2020)"] in conference_schools:
         if name_school["Graduation rate  women (DRVGR2020)"] > 80: 
+            
             print(name_school["instnm"])
             print(name_school["Graduation rate  women (DRVGR2020)"])
             print()
             print()
-    if name_school["NCAA"]["NAIA conference number football (IC2020)"] in conference_schools:
-        if name_school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"] > 50000:
-            print(name_school["instnm"])
-            print(name_school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"])
-            print()
-            print()
+print('Report for instate students living off campus:')
+for name_school in schools:
+    if name_school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"]:
+        if name_school["NCAA"]["NAIA conference number football (IC2020)"] in conference_schools:
+            if name_school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"] > 50000: #integer error 
+                
+                print(name_school["instnm"])
+                print(name_school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"])
+                print()
+                print()
     

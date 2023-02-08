@@ -46,16 +46,28 @@ eq_dict ={}
 #mag = earthquakes["type"]["properties"]["mag"]
 #longitude = earthquakes["type"]["geometry"]["coordinates"[0]]
 #latitude = earthquakes["type"]["geometry"]["coordinates"[1]]
-for one_earthquake in earthquakes:
-   location = earthquakes[one_earthquake]["type"]["properties"]["place"]
-   mag = earthquakes[one_earthquake]["type"]["properties"]["mag"]
-   longitude = earthquakes[one_earthquake]["type"]["geometry"]["coordinates"[0]]
-   latitude = earthquakes[one_earthquake]["type"]["geometry"]["coordinates"[1]]
+for one_earthquake in earthquakes["features"]:
+   location = one_earthquake["properties"]["place"] # why do i keep getting integer errors 
+   mag = one_earthquake["properties"]["mag"]
+   longitude = one_earthquake["geometry"]["coordinates"][0]
+   latitude = one_earthquake["geometry"]["coordinates"][1]
    if mag > 6: 
-      eq_dict[one_earthquake] = location + mag + longitude + latitude 
-      print (eq_dict)
-      print()
-      print()
+      eq_dict[location] = {'magnitude': mag, 'longitude': longitude, 'latitude': latitude}  #is this how you add to an empty dictionary this is what the textbook says 
+print (eq_dict)
+print()
+print()
+
+
+
+for key, value in eq_dict.items(): #iterates through individual key values to return the list / items
+   print(f'Location: {key}')
+   print('Magnitude', eq_dict[key]['magnitude'])
+   print('Longitude', eq_dict[key]['longitude'])
+   print('Latitude', eq_dict[key]['latitude'])
+   print()
+   print()
+   print()
+
 
 
 
