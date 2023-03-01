@@ -50,6 +50,8 @@ datastore = { "medical":[
 outfile = open('retail_space.csv', 'w')
 outfile.write('room-number,use,sq-ft,price')
 list1 = datastore["medical"]
+
+
 for dict in list1:
     room_number = dict['room-number']
     use = dict ['use']
