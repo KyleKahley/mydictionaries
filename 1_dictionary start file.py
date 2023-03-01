@@ -4,10 +4,10 @@ phonebook = {'Chris':'555−1111',
              'Katie':'555−2222',
              'Joanne':'555−3333'}
 
-"""
+'''''
 mydictionary = dict(m=8 , n= 9)
 print(mydictionary)
-print(f"Number of key-value parts: {len(phonebook)} ")
+print(f"Number of key-value parts: {len(phonebook)} ")  # this prints the amount of elements in the dictionary, there are three keys value pairs 
 
 print()
 print('*****  start section 1 - print dictionary ********')
@@ -32,7 +32,7 @@ print()
 
 name = 'Chris'
 if name in phonebook:
-    print(phonebook[name])
+    print(phonebook[name]) # this shows the value of name / Chris if it's in the phonebook dictionary 
 else: 
     print(f"{name} does not exist in the phonebook")
 
@@ -121,9 +121,9 @@ name= 'Chris' #if you switched it to chris it would show key not found
 
 phone= phonebook.get(name, 'key not found')
 
-print (phone)
-phonebook.clear()
-print(phonebook)
+print (phone) # this prints the value of Chris 
+phonebook.clear() # this clears the value of Chris
+print(phonebook) # this shows the dictionary after it being cleared 
 
 
 
@@ -137,8 +137,9 @@ print()
 print('*****  start section 7 - using pop method ********')
 print()
 
+print(phonebook)
+remove = phonebook.pop('Chris', 'not found') # pop method takes out the key and value pair of the dictionary, you can see that it was the full dictionary, we removed the key value pair and then printed the dictionary again and it was removed 
 
-remove = phonebook.pop('Chris', 'not found')
 print(remove)
 print(phonebook)
 
@@ -148,7 +149,7 @@ print()
 print('*****  end section 7 ********')
 print()
 
-
+'''''
 print()
 print('*****  start section 8 - using popitem ********')
 print()
@@ -163,7 +164,7 @@ print(phonebook)
 print()
 print('*****  end section 8 ********')
 print()
-"""
+'''''
 
 
 print()
@@ -186,4 +187,4 @@ print()
 
 
 
-""
+'''
